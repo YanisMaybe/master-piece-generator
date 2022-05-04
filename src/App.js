@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import leftArrow from "./right-arrow.png";
 
 const App = () => {
 
@@ -40,6 +41,9 @@ const App = () => {
           <div className="line"></div>
         </div>
         <div className="leftPart">
+          <div className="delButtonAB">
+            <img src = {leftArrow} alt="left arrow" />
+          </div>
           <div className="containerOfLeft">
             <div className="aboutAndBigName">
               <div className="about">
