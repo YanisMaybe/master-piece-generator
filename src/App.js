@@ -128,6 +128,9 @@ const App = () => {
                       <button onClick={()=>{
                         setColorsNum(prev=>[...prev,"black"])
                       }} className="btn addColorBtn">Add+</button>
+                      <button className="btn resetColorBtn" onClick={()=>{
+                        setColorsNum(["#0008ff","#ff0000"]);
+                      }}>Reset</button>
                     </div>
                     
                   </div>
