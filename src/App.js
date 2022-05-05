@@ -41,7 +41,44 @@ const App = () => {
           <div className="line"></div>
         </div>
         <div className="leftPart">
-          <div className="delButtonAB">
+          <div onClick = {(e)=>{
+            if(e.target.classList[2]==="delButtonABNew"||e.target.parentElement.classList[2]==="delButtonABNew"){
+              document.querySelector(".delButtonAB").classList.remove("reverseArrow")
+              document.querySelector(".containerOfAll > .leftPart").classList.remove("leftAnimRetrait")
+              document.querySelector(".containerOfAll > .middlePart").classList.remove("middleAnimRetrait")
+              document.querySelector(".containerOfAll > .rightPart").classList.remove("rightAnimRetrait")
+              document.querySelector(".absoluteElem").classList.remove("none")
+  
+              const firstParent = document.querySelector(".containerOfAll .leftPart ");
+              const secondParent = document.querySelector(".containerOfAll ");
+  
+              firstParent.appendChild(secondParent.childNodes[4])
+              document.querySelector(".delButtonAB").classList.remove("delButtonABNew")
+            }else{
+              document.querySelector(".leftPart > .delButtonAB").classList.add("reverseArrow")
+              document.querySelector(".containerOfAll > .leftPart").classList.add("leftAnimRetrait")
+              document.querySelector(".containerOfAll > .middlePart").classList.add("middleAnimRetrait")
+              document.querySelector(".containerOfAll > .rightPart").classList.add("rightAnimRetrait")
+              document.querySelector(".absoluteElem").classList.add("none")
+  
+              setTimeout(() => {
+                const firstParent = document.querySelector(".containerOfAll .leftPart ");
+                const secondParent = document.querySelector(".containerOfAll ");
+    
+                let child;
+                firstParent.childNodes.forEach((c,i)=>{
+                  console.log(c)
+                  if(c.classList[0]==="delButtonAB"){
+                    child = firstParent.childNodes[i]
+                  }
+                })
+                secondParent.appendChild(child)
+                document.querySelector(".delButtonAB").classList.add("delButtonABNew")
+              }, 200);
+            }
+            
+
+          }} className="delButtonAB">
             <img src = {leftArrow} alt="left arrow" />
           </div>
           <div className="containerOfLeft">
