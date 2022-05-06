@@ -5,6 +5,8 @@ body .containerOfAll{
     min-height: 100vh;
   
     .leftPart{
+      
+
         transition: 0.2s;
         background-color: #fa3701;
         width: 25%;
@@ -72,6 +74,9 @@ body .containerOfAll{
                         font-size: 3.4em;
                         font-weight: 600;
                     }
+                    @media screen and(max-width: 1186px){
+                        font-size: 0.8em;
+                    }
                 }            
             }
             .berbarianPart{
@@ -91,6 +96,15 @@ body .containerOfAll{
                         opacity: 0.9;
                     }
                 }
+            }
+        }
+        @media screen and(max-width: 970px) {
+            width: 0%;
+            position: relative;
+    
+            &:nth-child(2){
+                animation: dispOfLeftElems 0.2s forwards;
+              
             }
         }
     }
@@ -130,7 +144,11 @@ body .containerOfAll{
         padding: 11vh 0;
         transition: 0.2s;
 
+       
         .containerOfMiddle{
+            @media screen and(max-width: 970px) {
+                position: relative;
+            }
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -160,6 +178,9 @@ body .containerOfAll{
                     padding-top: 33.34%;
                     transform: translate(-50%, -50%);
 
+                    @media screen and(max-width: 970px){
+                        transform: translate(-50%, -50%) scale(2);
+                    }
                     .containerOfMSTR{
                         position: absolute;
                         left: 0;
@@ -195,8 +216,18 @@ body .containerOfAll{
                     transform: translateX(-50%);
                     top: 30px;
                     animation: fromBottomToTopTwo 1.1s;
+                    @media screen and(max-width: 665px) {
+                        width: 210px;
+                        font-size: 0.7em;
+                    }
                 }
             }
+        }
+        @media screen and(max-width: 970px) {
+            background-color: #151515;
+            width: 62.5%;
+            padding: 11vh 0;
+            transition: 0.2s;
         }
     }
     .middleAnimRetrait{
@@ -225,6 +256,7 @@ body .containerOfAll{
         width: 25%;
         padding-top: 45px;
 
+       
         .containerOfRight{
             display: flex;
             flex-direction: column;
@@ -249,6 +281,9 @@ body .containerOfAll{
                         margin-top: 16px;
                         opacity: 0;
                         animation: fromRightToLeft 1.1s 1.1s forwards;
+                        @media screen and(max-width:691px) {
+                            font-size: 1.7em;
+                        }
                     }
                 }
                 .slideBars{
@@ -366,12 +401,21 @@ body .containerOfAll{
                     font-size: 1.25em;
                     transition: 0.2s;
 
+                    @media screen and(max-width:665px) {
+                        font-size: 0.85em;
+                    }
                     &:hover{
                         cursor: pointer;
                         opacity: 0.8;
                     }
                 }
             }
+        }
+        @media screen and(max-width: 970px){
+            transition: 0.2s;
+            background-color: #1c1c1c;
+            width: 37.5%;
+            padding-top: 45px;
         }
     }
     .rightAnimRetrait{
@@ -380,6 +424,7 @@ body .containerOfAll{
     }
 
     .absoluteElem{
+        z-index: 4;
         .circle{
             width: 33%;
             position: absolute;
@@ -399,6 +444,9 @@ body .containerOfAll{
             top: 50%;
             left: 0;
             transform: translateY(-50%);
+        }
+        @media screen and(max-width: 970px) {
+            display: none;
         }
     }
 }
